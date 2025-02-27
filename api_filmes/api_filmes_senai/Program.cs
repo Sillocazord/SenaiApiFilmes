@@ -11,7 +11,8 @@ builder.Services.AddDbContext<Filmes_Context>(options =>
 
 //Adicionar o repositório e a interface ao container de injeção de dependência
 builder.Services.AddScoped<IGeneroRepository, GeneroRepository>(); 
-builder.Services.AddScoped<IFilmeRepositoty, FilmeRepository>();
+builder.Services.AddScoped<IFilmeRepository, FilmeRepository>();
+builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 
 //Adicionar o serviço de Controlllers
 builder.Services.AddControllers();

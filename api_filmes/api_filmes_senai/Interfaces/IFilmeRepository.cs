@@ -2,7 +2,7 @@
 
 namespace api_filmes_senai.Interfaces
 {
-    public interface IFilmeRepositoty
+    public interface IFilmeRepository
     {
         void Cadastrar(Filme novoFilme);
 

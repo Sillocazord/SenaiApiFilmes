@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace api_filmes_senai.Repositories
 {
-    public class FilmeRepository : IFilmeRepositoty
+    public class FilmeRepository : IFilmeRepository
     {
         private readonly Filmes_Context _context;
 

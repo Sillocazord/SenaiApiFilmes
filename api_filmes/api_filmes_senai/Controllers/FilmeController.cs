@@ -11,8 +11,8 @@ namespace api_filmes_senai.Controllers
     [Produces("application/json")]
     public class FilmeController : ControllerBase
     {
-        private readonly IFilmeRepositoty _filmeRepository;
-        public FilmeController(IFilmeRepositoty filmeRepositoty)
+        private readonly IFilmeRepository _filmeRepository;
+        public FilmeController(IFilmeRepository filmeRepositoty)
         {
             _filmeRepository = filmeRepositoty;
         }
