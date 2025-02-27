@@ -15,10 +15,5 @@ namespace api_filmes_senai.Domains
         [Column(TypeName ="VARCHAR(30)")]
         [Required(ErrorMessage ="Nome do Genêro é obrigatório!")]
         public string? Nome { get; set; }
-
-        internal Genero Select(Func<object, object> value)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

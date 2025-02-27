@@ -14,7 +14,7 @@ namespace api_filmes_senai.Interfaces
 
         Filme BuscarPorId(Guid id);
 
-        List<Filme> ListarPeloGenero(Guid idGenero);
+        List<Filme> ListarPorGenero(Guid idGenero);
 
     }
 }

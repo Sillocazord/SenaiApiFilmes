@@ -110,7 +110,8 @@ namespace api_filmes_senai.Repositories
                 throw;
             }
         }
-        public List<Filme> ListaPorGenero(Guid idGenero)
+
+        public List<Filme> ListarPorGenero(Guid idGenero)
         {
             try
             {
