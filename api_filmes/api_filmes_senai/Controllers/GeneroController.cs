@@ -1,5 +1,6 @@
 ﻿using api_filmes_senai.Domains;
 using api_filmes_senai.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,6 +17,10 @@ namespace api_filmes_senai.Controllers
             _generoRepository = generoRepository;
         }
 
+        /// <summary>
+        /// Endpoint para Listar os Gêneros.
+        /// </summary>
+        /// <returns>Listar Gêneros</returns>
         [HttpGet]
         public IActionResult Get()
         {
@@ -29,7 +34,13 @@ namespace api_filmes_senai.Controllers
 
             }
         }
-
+        
+        /// <summary>
+        /// Endpoint para Cadastrar um Gênero.
+        /// </summary>
+        /// <param name="novoGenero"></param>
+        /// <returns>Cadastrar Gênero</returns>
+        [Authorize]
         [HttpPost]
         public IActionResult Post(Genero novoGenero)
         {
@@ -44,6 +55,12 @@ namespace api_filmes_senai.Controllers
                 return BadRequest(e.Message);
             }
         }
+
+        /// <summary>
+        /// Endpoint para buscar um Gênero pelo seu ID.
+        /// </summary>
+        /// <param name="id">id do Gênero buscado</param>
+        /// <returns>Gênero Buscado</returns>
         [HttpGet("BuscarPorId/{id}")]
 
         public IActionResult GetById(Guid id)
@@ -63,6 +80,12 @@ namespace api_filmes_senai.Controllers
 
         }
 
+        /// <summary>
+        /// Endpoint para Deletar um Gênero pelo seu ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Deletar Gênero</returns>
+        [Authorize]
         [HttpDelete("{id}")]
 
         public IActionResult Delete(Guid id) {
@@ -78,6 +101,13 @@ namespace api_filmes_senai.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint para Atualizar o Gênero pelo ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="genero"></param>
+        /// <returns>Atualizar Gênero</returns>
+        [Authorize]
         [HttpPut("{id}")]
 
         public IActionResult Put(Guid id, Genero genero)
