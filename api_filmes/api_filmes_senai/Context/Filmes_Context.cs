@@ -13,7 +13,7 @@ namespace api_filmes_senai.Context
         {    
         }
         /// <summary>
-        /// Define que as classes se transfiromarão em tabelas no DB
+        /// Define que as classes se transformarão em tabelas no DB
         /// </summary>
         public DbSet<Genero> Genero { get; set; }
         public DbSet<Filme> Filme { get; set; }

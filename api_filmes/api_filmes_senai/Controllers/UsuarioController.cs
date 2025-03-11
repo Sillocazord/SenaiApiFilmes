@@ -1,6 +1,7 @@
 ﻿using api_filmes_senai.Domains;
 using api_filmes_senai.Interfaces;
 using api_filmes_senai.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -23,6 +24,8 @@ namespace api_filmes_senai.Controllers
         /// </summary>
         /// <param name="usuario"></param>
         /// <returns>Cadastrar Usuario</returns>
+        /// 
+        [Authorize]
         [HttpPost]
         public IActionResult Post(Usuario usuario)
         {
